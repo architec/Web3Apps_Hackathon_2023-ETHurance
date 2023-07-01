@@ -2,7 +2,19 @@
 Contract: https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#code
 
 ## What it does
-The ETHurance blockchain hackathon project will provide decentralized smart contract insurance for the ETH/USD price. The users interact with this smart contract to buy insurance with 0.01 ETH. After ETH/USD price drops by $200 or more, users can cash out with 0.012 ETH. If the users would like to cash out before ETH/USD price drops by $200 or more, they can choose to cash out with 0.008 ETH.
+The ETHurance blockchain hackathon project will provide decentralized smart contract insurance for the ETH/USD price. The users interact with this smart contract to buy insurance with 0.01 ETH. After ETH/USD price drops by $200 or more, users can cash out with 0.012 ETH (getETHUSD <= getTargetPrice). If the users would like to cash out before ETH/USD price drops by $200 or more (getETHUSD > getTargetPrice), they can choose to cash out with 0.008 ETH. 
+
+Users can call the [read functions here](https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#readContract)
+- enterPrice is the price when users buy insurance. It is 0 for users who do not have insurance. It returns an answer with 8 decimals of precision.
+- getETHUSD shows the current ETH/USD rate from Chainlink Sepolia testnet. It returns an answer with 8 decimals of precision.
+- getTargetPrice is the enterPrice - 200. It returns an answer with 8 decimals of precision.
+- owner will return the address of the owner.
+
+Users can call the [write functions here](https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#writeContract)
+- buyInsurance will deposit 0.01 ETH into the contract, and record the getETHUSD as enterPrice.
+- cashOut will withdraw 0.008 or 0.012 ETH depending on the getETHUSD price.
+- deposit is only available to the owner, and can deposit any amount of ETH to the contract.
+
 
 ## How we built it
 We built it by deploying a solidity contract on the Sepolia testnet, and used Hardhat to develop, deploy, and verify the contract. To get the current ETH/USD price, we used the ETH/USD Sepolia Chainlink data feed. 
