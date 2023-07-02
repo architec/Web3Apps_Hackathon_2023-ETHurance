@@ -1,5 +1,5 @@
 # Web3Apps_Hackathon_2023-ETHurance
-Contract: https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#code
+Verified Contract: https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#code
 
 ## What it does
 The ETHurance blockchain hackathon project will provide decentralized smart contract insurance for the ETH/USD price. The users interact with this smart contract to buy insurance with 0.01 ETH. After ETH/USD price drops by $200 or more, users can cash out with 0.012 ETH (getETHUSD <= getTargetPrice). If the users would like to cash out before ETH/USD price drops by $200 or more (getETHUSD > getTargetPrice), they can choose to cash out with 0.008 ETH. 
@@ -35,3 +35,6 @@ We learned the following topics from this project:
 
 ## What's next for ETHurance
 The next step for ETHurance is to make the buyInsurance able to take any amount of ETH, instead of just 0.01 ETH.
+
+## Reference
+- Chainlink Data Feeds: https://docs.chain.link/data-feeds/using-data-feeds
