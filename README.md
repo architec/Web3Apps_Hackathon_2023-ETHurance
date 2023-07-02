@@ -1,4 +1,6 @@
 # Web3Apps_Hackathon_2023-ETHurance
+Devpost: https://devpost.com/software/ethurance
+
 Verified Contract: https://sepolia.etherscan.io/address/0x01A182c8A73059806b701a9E06eE3aed15D1D604#code
 
 ## What it does
